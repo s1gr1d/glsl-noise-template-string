@@ -19,7 +19,7 @@
     "url": "https://github.com/s1gr1d/glsl-noise-template-string"
   },
   "files": [
-    "lib/**/*"
+    "dist/**/*"
   ],
   "keywords": [
     "glsl",
