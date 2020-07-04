@@ -1,6 +1,6 @@
 {
   "name": "glsl-noise-template-string",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "Use popular noise functions within glsl written in JS/TS Template-Strings",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
