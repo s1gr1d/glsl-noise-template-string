@@ -4,9 +4,12 @@ import { glsl } from "../lib/glslIdentityFunction";
 // by Stefan Gustavson
 //
 export const perlin2D = glsl`
-    vec2 fade(vec2 t) {return t*t*t*(t*(t*6.0-15.0)+10.0);}
-
     float perlin2D(vec2 P){
+    
+        // -----------------------------
+            vec2 fade(vec2 t) {return t*t*t*(t*(t*6.0-15.0)+10.0);}
+        // -----------------------------
+        
         vec4 Pi = floor(P.xyxy) + vec4(0.0, 0.0, 1.0, 1.0);
         vec4 Pf = fract(P.xyxy) - vec4(0.0, 0.0, 1.0, 1.0);
         Pi = mod(Pi, 289.0); // To avoid truncation effects in permutation

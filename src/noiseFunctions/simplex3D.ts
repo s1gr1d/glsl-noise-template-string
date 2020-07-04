@@ -4,10 +4,13 @@ import { glsl } from "../lib/glslIdentityFunction";
 // by Ian McEwan, Ashima Arts
 //
 export const simplex3D = glsl`
-    vec4 permute(vec4 x){return mod(((x*34.0)+1.0)*x, 289.0);}
-    vec4 taylorInvSqrt(vec4 r){return 1.79284291400159 - 0.85373472095314 * r;}
-
     float simplex3D(vec3 v){ 
+    
+        // -----------------------------
+            vec4 permute(vec4 x){return mod(((x*34.0)+1.0)*x, 289.0);}
+            vec4 taylorInvSqrt(vec4 r){return 1.79284291400159 - 0.85373472095314 * r;}
+        // -----------------------------
+        
         const vec2  C = vec2(1.0/6.0, 1.0/3.0) ;
         const vec4  D = vec4(0.0, 0.5, 1.0, 2.0);
 

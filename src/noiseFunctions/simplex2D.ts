@@ -3,9 +3,12 @@ import { glsl } from "../lib/glslIdentityFunction";
 // Simplex 2D noise
 //
 export const simplex2D = glsl`
-    vec3 permute(vec3 x) { return mod(((x*34.0)+1.0)*x, 289.0); }
-
     float simplex2D(vec2 v){
+    
+        // -----------------------------
+            vec3 permute(vec3 x) { return mod(((x*34.0)+1.0)*x, 289.0); }
+        // -----------------------------
+        
         const vec4 C = vec4(0.211324865405187, 0.366025403784439,
                 -0.577350269189626, 0.024390243902439);
         vec2 i  = floor(v + dot(v, C.yy) );
