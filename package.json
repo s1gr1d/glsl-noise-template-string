@@ -1,6 +1,6 @@
 {
   "name": "glsl-noise-template-string",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Use popular noise functions within glsl written in JS/TS Template-Strings",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -10,16 +10,17 @@
     "format": "prettier --write \"src/**/*.ts\" ",
     "lint": "tslint -p tsconfig.json",
     "prepare": "npm run build",
-    "prepublishOnly": "npm test && npm run lint",
+    "prepublishOnly": "npm run lint",
     "preversion": "npm run lint",
-    "version": "npm run format && git add -A src",
-    "postversion": "git push && git push --tags"
+    "version": "npm run format"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/s1gr1d/glsl-noise-template-string"
   },
-  "files": ["lib/**/*"],
+  "files": [
+    "lib/**/*"
+  ],
   "keywords": [
     "glsl",
     "glsl-noise",
