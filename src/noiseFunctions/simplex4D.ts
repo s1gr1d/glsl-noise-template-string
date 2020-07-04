@@ -1,7 +1,7 @@
 import { glsl } from "../lib/glslIdentityFunction";
 
-//	Simplex 4D Noise
-//	by Ian McEwan, Ashima Arts
+// Simplex 4D Noise
+// by Ian McEwan, Ashima Arts
 //
 export const simplex4D = glsl`
     vec4 permute(vec4 x){return mod(((x*34.0)+1.0)*x, 289.0);}

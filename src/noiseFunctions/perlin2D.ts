@@ -1,7 +1,7 @@
 import { glsl } from "../lib/glslIdentityFunction";
 
-//	Classic Perlin 2D Noise
-//	by Stefan Gustavson
+// Classic Perlin 2D Noise
+// by Stefan Gustavson
 //
 export const perlin2D = glsl`
     vec2 fade(vec2 t) {return t*t*t*(t*(t*6.0-15.0)+10.0);}
