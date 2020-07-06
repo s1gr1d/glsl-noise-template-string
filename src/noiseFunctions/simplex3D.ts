@@ -4,13 +4,10 @@ import { glsl } from "../lib/glslIdentityFunction";
 // by Ian McEwan, Ashima Arts
 //
 export const simplex3D = glsl`
-    float simplex3D(vec3 v){ 
-    
-        // -----------------------------
-            vec4 permute(vec4 x){return mod(((x*34.0)+1.0)*x, 289.0);}
-            vec4 taylorInvSqrt(vec4 r){return 1.79284291400159 - 0.85373472095314 * r;}
-        // -----------------------------
+    vec4 permute_wZKLQskNaF(vec4 x){return mod(((x*34.0)+1.0)*x, 289.0);}
+    vec4 taylorInvSqrt_WVt3ZeoHUN(vec4 r){return 1.79284291400159 - 0.85373472095314 * r;}  
         
+    float simplex3D(vec3 v){ 
         const vec2  C = vec2(1.0/6.0, 1.0/3.0) ;
         const vec4  D = vec4(0.0, 0.5, 1.0, 2.0);
 
@@ -31,7 +28,7 @@ export const simplex3D = glsl`
 
         // Permutations
         i = mod(i, 289.0 ); 
-        vec4 p = permute( permute( permute( 
+        vec4 p = permute_wZKLQskNaF( permute_wZKLQskNaF( permute_wZKLQskNaF( 
                     i.z + vec4(0.0, i1.z, i2.z, 1.0 ))
                 + i.y + vec4(0.0, i1.y, i2.y, 1.0 )) 
                 + i.x + vec4(0.0, i1.x, i2.x, 1.0 ));
@@ -66,7 +63,7 @@ export const simplex3D = glsl`
         vec3 p3 = vec3(a1.zw,h.w);
 
         //Normalise gradients
-        vec4 norm = taylorInvSqrt(vec4(dot(p0,p0), dot(p1,p1), dot(p2, p2), dot(p3,p3)));
+        vec4 norm = taylorInvSqrt_WVt3ZeoHUN(vec4(dot(p0,p0), dot(p1,p1), dot(p2, p2), dot(p3,p3)));
         p0 *= norm.x;
         p1 *= norm.y;
         p2 *= norm.z;
